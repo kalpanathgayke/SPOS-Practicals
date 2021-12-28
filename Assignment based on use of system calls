@@ -1,0 +1,26 @@
+                Assignment No :- 03
+    // Assignment based on use of system calls.
+    
+#include<stdio.h>
+#include<unistd.h>
+#include<>sys/types.h>
+int main()
+{
+	int pid;
+	pid=fork();
+	if(pid<0)
+	printf("\nFork  failed.");
+	if(pid==0)
+{
+		printf("\nChild process.");
+		int child_process=getppid();
+		printf("\nProcess id= %d",child_process);
+	}
+	else
+{
+		printf("\nParent process.\n");
+		int parent_process=getpid();
+		printf("\nProcess id= %d",parent_process);
+	}
+	return 0;
+}
